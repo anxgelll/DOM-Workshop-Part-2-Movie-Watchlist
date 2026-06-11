@@ -63,7 +63,7 @@ header {
 
 .movie-card {
   display: flex;
-  justify-content: space-between;  /* info on left, buttons on right */
+  justify-content: space-between;  
   align-items: center;
   background: #fff;
   padding: 1rem;
@@ -85,19 +85,16 @@ header {
 }
 .watch-btn { background: #10b981; color: #fff; }  /* green */
 .remove-btn { background: #f43f5e; color: #fff; }  /* red */
-/* JS toggles this on a card when "Mark Watched" is clicked */
 .watched {
   opacity: 0.5;
   text-decoration: line-through;
 }
 
-/* JS moves this between filter buttons to show which is selected */
 .active-filter {
   background-color: #6366f1;
   color: #fff;
 }
 
-/* JS adds this to cards that don't match the current filter */
 .filtered-out {
   display: none;
 }

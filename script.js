@@ -1,4 +1,3 @@
-// ---------- Phase 1: select elements ----------
 const appTitle = document.getElementById("app-title");
 const movieCount = document.getElementById("movie-count");
 const movieForm = document.getElementById("movie-form");
@@ -10,7 +9,6 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 
 let currentFilter = "all";
 
-// ---------- Phase 3 + 4: add a movie ----------
 movieForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const title = titleInput.value;
@@ -21,7 +19,6 @@ movieForm.addEventListener("submit", function (event) {
   movieForm.reset();
 });
 
-// ---------- Phase 4: build a card ----------
 function createMovieCard(title, genre) {
   const li = document.createElement("li");
   li.className = "movie-card";
@@ -65,7 +62,6 @@ function createMovieCard(title, genre) {
   return li;
 }
 
-// ---------- Phase 5: card buttons ----------
 movieList.addEventListener("click", function (event) {
   if (event.target.tagName !== "BUTTON") return;
   const card = event.target.closest("li");
@@ -87,13 +83,11 @@ movieList.addEventListener("click", function (event) {
   }
 });
 
-// ---------- Phase 6: count ----------
 function updateCount() {
   const cards = document.querySelectorAll(".movie-card");
   movieCount.textContent = cards.length + " movies";
 }
 
-// ---------- Phase 6: filters ----------
 function updateFilterButtons(activeFilter) {
   filterBtns.forEach(function (btn) {
     btn.classList.remove("active-filter");
@@ -131,7 +125,6 @@ filterBtns.forEach(function (btn) {
   });
 });
 
-// ---------- Phase 6: clear watched ----------
 clearWatchedBtn.addEventListener("click", function () {
   const watched = document.querySelectorAll(".movie-card.watched");
   watched.forEach(function (card) {
